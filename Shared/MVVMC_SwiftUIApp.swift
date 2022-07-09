@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct MVVMC_SwiftUIApp: App {
+    
+    init() {
+        Coordinator()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

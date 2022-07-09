@@ -17,6 +17,17 @@
 		A4D15FD82878D75E00DAC69C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FAE2878D75D00DAC69C /* ContentView.swift */; };
 		A4D15FD92878D75E00DAC69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D15FAF2878D75E00DAC69C /* Assets.xcassets */; };
 		A4D15FDA2878D75E00DAC69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D15FAF2878D75E00DAC69C /* Assets.xcassets */; };
+		A4D15FEC2878D79300DAC69C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FEB2878D79300DAC69C /* Coordinator.swift */; };
+		A4D15FEF2878DD0400DAC69C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FEE2878DD0400DAC69C /* Network.swift */; };
+		A4D15FF02878DD0400DAC69C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FEE2878DD0400DAC69C /* Network.swift */; };
+		A4D15FF42878F2E300DAC69C /* APIREsponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FF32878F2E300DAC69C /* APIREsponseModels.swift */; };
+		A4D15FF52878F2E300DAC69C /* APIREsponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FF32878F2E300DAC69C /* APIREsponseModels.swift */; };
+		A4D15FF72878F31300DAC69C /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FF62878F31300DAC69C /* APIModels.swift */; };
+		A4D15FF82878F31300DAC69C /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FF62878F31300DAC69C /* APIModels.swift */; };
+		A4D15FFB2878F34100DAC69C /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FFA2878F34100DAC69C /* RequestProtocol.swift */; };
+		A4D15FFC2878F34100DAC69C /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FFA2878F34100DAC69C /* RequestProtocol.swift */; };
+		A4D15FFE2878F37100DAC69C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FFD2878F37100DAC69C /* Service.swift */; };
+		A4D15FFF2878F37100DAC69C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D15FFD2878F37100DAC69C /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,12 @@
 		A4D15FCD2878D75E00DAC69C /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D15FD12878D75E00DAC69C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A4D15FD32878D75E00DAC69C /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		A4D15FEB2878D79300DAC69C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A4D15FEE2878DD0400DAC69C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A4D15FF32878F2E300DAC69C /* APIREsponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIREsponseModels.swift; sourceTree = "<group>"; };
+		A4D15FF62878F31300DAC69C /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		A4D15FFA2878F34100DAC69C /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		A4D15FFD2878F37100DAC69C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +103,9 @@
 		A4D15FA72878D75C00DAC69C = {
 			isa = PBXGroup;
 			children = (
+				A4D15FF12878E6C500DAC69C /* Models */,
+				A4D15FED2878DCEF00DAC69C /* Service */,
+				A4D15FE92878D78200DAC69C /* DesignPattern */,
 				A4D15FAC2878D75D00DAC69C /* Shared */,
 				A4D15FBB2878D75E00DAC69C /* macOS */,
 				A4D15FC42878D75E00DAC69C /* Tests iOS */,
@@ -139,6 +159,57 @@
 				A4D15FD32878D75E00DAC69C /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		A4D15FE92878D78200DAC69C /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				A4D15FEA2878D78A00DAC69C /* Coordinator */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
+		A4D15FEA2878D78A00DAC69C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A4D15FEB2878D79300DAC69C /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A4D15FED2878DCEF00DAC69C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A4D15FF92878F32E00DAC69C /* Requests */,
+				A4D15FEE2878DD0400DAC69C /* Network.swift */,
+				A4D15FFD2878F37100DAC69C /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A4D15FF12878E6C500DAC69C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4D15FF22878F2C900DAC69C /* API Reponse */,
+				A4D15FF62878F31300DAC69C /* APIModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4D15FF22878F2C900DAC69C /* API Reponse */ = {
+			isa = PBXGroup;
+			children = (
+				A4D15FF32878F2E300DAC69C /* APIREsponseModels.swift */,
+			);
+			path = "API Reponse";
+			sourceTree = "<group>";
+		};
+		A4D15FF92878F32E00DAC69C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A4D15FFA2878F34100DAC69C /* RequestProtocol.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +370,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D15FF72878F31300DAC69C /* APIModels.swift in Sources */,
+				A4D15FFE2878F37100DAC69C /* Service.swift in Sources */,
 				A4D15FD72878D75E00DAC69C /* ContentView.swift in Sources */,
+				A4D15FF42878F2E300DAC69C /* APIREsponseModels.swift in Sources */,
 				A4D15FD52878D75E00DAC69C /* MVVMC_SwiftUIApp.swift in Sources */,
+				A4D15FEF2878DD0400DAC69C /* Network.swift in Sources */,
+				A4D15FEC2878D79300DAC69C /* Coordinator.swift in Sources */,
+				A4D15FFB2878F34100DAC69C /* RequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +385,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D15FF52878F2E300DAC69C /* APIREsponseModels.swift in Sources */,
+				A4D15FFF2878F37100DAC69C /* Service.swift in Sources */,
+				A4D15FF82878F31300DAC69C /* APIModels.swift in Sources */,
 				A4D15FD82878D75E00DAC69C /* ContentView.swift in Sources */,
+				A4D15FFC2878F34100DAC69C /* RequestProtocol.swift in Sources */,
 				A4D15FD62878D75E00DAC69C /* MVVMC_SwiftUIApp.swift in Sources */,
+				A4D15FF02878DD0400DAC69C /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +543,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6CEKQ63QG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -476,8 +560,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ccayres.playground.swiftui.MVVMC-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "ccayres.study.swiftui.MVVMC-SwiftUI";
 				PRODUCT_NAME = "MVVMC-SwiftUI";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,8 +575,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6CEKQ63QG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -505,8 +592,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ccayres.playground.swiftui.MVVMC-SwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = "ccayres.study.swiftui.MVVMC-SwiftUI";
 				PRODUCT_NAME = "MVVMC-SwiftUI";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
