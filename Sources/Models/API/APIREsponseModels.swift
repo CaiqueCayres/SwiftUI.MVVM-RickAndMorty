@@ -15,4 +15,10 @@ struct APIResponse<T:Codable>: Codable {
 struct APIREsponseInfo: Codable {
     let count: Int
     let pages: Int
+    var next: String?
+    
+    var nextPageIndex: Int? {
+        guard let nextIndex = next?.last else { return nil }
+        return Int(String(nextIndex))
+    }
 }

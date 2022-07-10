@@ -6,18 +6,18 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    
     var body: some View {
         
         VStack {
-            Text("Hello, world!")
-                .padding()
-            Text("Hello, world!")
-                .padding()
+            ListView(viewModel: ListViewModel(), title: "OI")
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

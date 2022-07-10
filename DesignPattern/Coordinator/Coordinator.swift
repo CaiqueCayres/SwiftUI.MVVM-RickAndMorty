@@ -12,20 +12,11 @@ import SwiftUI
 
 class Coordinator {
     
-    
     init(){
-        
         doshit()
     }
     
-    
     func doshit(){
         
-        let service = ServiceManager()
-        
-        service.loadMoreChars()
-            
-
-
     }
 }

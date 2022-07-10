@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Characther: Codable {
-    
+struct Characther: Codable, Hashable {
+        
     let id: Int
     let name: String
     let status: String
@@ -21,13 +21,13 @@ struct Characther: Codable {
     let url: String
     let created: String
     
-    struct Origin: Codable {
+    struct Origin: Codable, Hashable {
         let name: String
         let url: String
     }
 }
 
-struct Location: Codable {
+struct Location: Codable, Hashable {
     
     let id: Int
     let name: String
@@ -38,7 +38,7 @@ struct Location: Codable {
     let created: String
 }
 
-struct Episode: Codable {
+struct Episode: Codable, Hashable {
     
     let id: Int
     let name: String
