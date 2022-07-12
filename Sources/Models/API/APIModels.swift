@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Characther: Codable, Hashable {
+struct Characther: Codable, Hashable, Equatable {
         
     let id: Int
     let name: String
@@ -27,7 +27,7 @@ struct Characther: Codable, Hashable {
     }
 }
 
-struct Location: Codable, Hashable {
+struct Location: Codable, Hashable, Equatable {
     
     let id: Int
     let name: String
@@ -38,7 +38,7 @@ struct Location: Codable, Hashable {
     let created: String
 }
 
-struct Episode: Codable, Hashable {
+struct Episode: Codable, Hashable, Equatable {
     
     let id: Int
     let name: String

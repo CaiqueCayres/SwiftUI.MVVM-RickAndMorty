@@ -8,15 +8,14 @@
 import SwiftUI
 import Combine
 
-protocol ServiceManagerProtocol {
-    
+protocol DataManagerProtocol {
     
     func loadMoreChars()    -> AnyPublisher<[Characther], Error>
     func loadMoreEpisodes() -> AnyPublisher<[Episode], Error>
     func loadMoreLocation() -> AnyPublisher<[Location], Error>
 }
 
-class ServiceManager: ObservableObject {
+class DataManager: ObservableObject {
     
     let service: ServiceProtocol
     
@@ -33,7 +32,7 @@ class ServiceManager: ObservableObject {
     }
 }
 
-extension ServiceManager: ServiceManagerProtocol {
+extension DataManager: DataManagerProtocol {
     
     func loadMoreChars() -> AnyPublisher<[Characther], Error> {
         
@@ -42,7 +41,7 @@ extension ServiceManager: ServiceManagerProtocol {
             .map { response in
                 self.characthersList += response.results
                 self.charactersInfos = response.info
-                return self.characthersList
+                return Array(Set(self.characthersList.sorted { $0.name > $1.name }))
             }
             .removeDuplicates()
             .eraseToAnyPublisher()
