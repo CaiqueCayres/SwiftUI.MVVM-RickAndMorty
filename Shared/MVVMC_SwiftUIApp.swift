@@ -11,7 +11,7 @@ import SwiftUI
 struct MVVMC_SwiftUIApp: App {
     
     init() {
-        Coordinator()
+        
     }
     
     var body: some Scene {

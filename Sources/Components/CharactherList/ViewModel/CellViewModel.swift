@@ -21,7 +21,7 @@ class CellViewModel: ObservableObject {
          downloader: Downloader = Downloader()) {
         self.data = data
         self.downloader = downloader
-        downloadImage()
+        self.downloadImage()
     }
     
     func downloadImage() {

@@ -10,13 +10,14 @@ import SwiftUI
 struct SearchBarView: View {
     
     @Binding var searchText: String
+    var placeHolder: String
     
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(searchText.isEmpty ? .secondary : .primary)
             
-            TextField("Search by name or species",
+            TextField(placeHolder,
                       text: $searchText)
             .foregroundColor(searchText.isEmpty ? .secondary : .primary)
                 .overlay(
@@ -47,11 +48,13 @@ struct SearchBarView: View {
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SearchBarView(searchText: .constant(""))
+            SearchBarView(searchText: .constant(""),
+                          placeHolder: "Search by name or species")
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.light)
             
-        SearchBarView(searchText: .constant(""))
+            SearchBarView(searchText: .constant(""),
+                          placeHolder: "Search by name or species")
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
         }

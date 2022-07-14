@@ -10,6 +10,7 @@ import SwiftUI
 struct ListView: View {
     
     @ObservedObject var viewModel: ListViewModel
+    @Namespace var animation
     @State var title: String
     
     let sortValues: [ListViewModel.SortValue] = [.none, .charType, .species, .origin]
@@ -22,29 +23,24 @@ struct ListView: View {
     
     var body: some View {
         
-        NavigationView {
-        
-            ZStack(alignment: .trailing) {
+        ZStack(alignment: .trailing) {
             
-                VStack{
-                    
-                    SearchBarView(searchText: $viewModel.filterValue)
-                    
-                    listView()
+            VStack{
+                
+                CustomSegmentedBar(options: sortValues)
+                    .padding()
+                
+                SearchBarView(searchText: $viewModel.filterValue,
+                              placeHolder: "Search by name or species")
+                
+                ListView()
                     .onAppear { viewModel.updateChars() }
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        menuView(options: sortValues) { sortValue in
-                            viewModel.sortValue = sortValue
-                        }
-                    }
-                }
-        }
+            }
         }
     }
     
-    func listView() -> some View {
+    @ViewBuilder
+    func ListView() -> some View {
         
         List(viewModel.sections.indices, id:\.self) { sId in
             
@@ -58,7 +54,7 @@ struct ListView: View {
                     CharactherView(model: CellViewModel(data: data))
                         .onAppear {
                             guard rId == section.contentFormatters.count - 1 &&
-                                  sId == viewModel.sections.count - 1 else { return }
+                                    sId == viewModel.sections.count - 1 else { return }
                             viewModel.updateChars()
                         }
                 }
@@ -66,21 +62,25 @@ struct ListView: View {
         }
     }
     
-    func menuView(options: [ListViewModel.SortValue],
-                  onClick: @escaping (ListViewModel.SortValue) -> Void) -> some View {
+    
+    @ViewBuilder
+    func CustomSegmentedBar(options: [ListViewModel.SortValue]) -> some View {
         
-        Menu {
-            ForEach(options, id:\.self) { value in
-                Button {
-                    onClick(value)
-                } label: {
-                    Text(value.rawValue)
-                }
+        HStack(spacing: 10) {
+            ForEach(options, id: \.self) { tab in
+                Text(tab.rawValue)
+                    .font(.callout)
+                    .fontWeight(.semibold)
+                    .scaleEffect(0.9)
+                    .foregroundColor(viewModel.sortValue == tab ? .black : .gray)
+                    .padding(.vertical, 6)
+                    .frame(maxWidth: .infinity)
+                    .contentShape(Capsule())
+                    .onTapGesture {
+                        withAnimation { viewModel.sortValue = tab }
+                    }
             }
-        } label: {
-            Image(systemName: "plus")
         }
-        .padding()
     }
 }
 

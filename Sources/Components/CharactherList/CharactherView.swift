@@ -32,20 +32,29 @@ struct CharactherView: View {
 }
 
 struct CharactherView_Previews: PreviewProvider {
+    
+    static let modelMock = CellViewModel(data: CellFormatter(characther: Characther(id: 0,
+                                                                            name: "Eu",
+                                                                            status: "alive",
+                                                                            species: "Human",
+                                                                            type: "",
+                                                                            gender: "",
+                                                                            origin: Characther.Origin(name: "",
+                                                                                                      url: ""),
+                                                                            image: "",
+                                                                            episode: [],
+                                                                            url: "",
+                                                                            created: "" )))
+    
     static var previews: some View {
         Group {
-            CharactherView(model: CellViewModel(data: CellFormatter(characther: Characther(id: 0,
-                                                                                           name: "Eu",
-                                                                                           status: "alive",
-                                                                                           species: "Human",
-                                                                                           type: "",
-                                                                                           gender: "",
-                                                                                           origin: Characther.Origin(name: "",
-                                                                                                                     url: ""),
-                                                                                           image: "",
-                                                                                           episode: [],
-                                                                                           url: "",
-                                                                                           created: "" ))))
+            CharactherView(model: modelMock)
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.light)
+            
+            CharactherView(model: modelMock)
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
         }
     }
 }
